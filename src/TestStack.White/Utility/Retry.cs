@@ -48,6 +48,7 @@ namespace White.Core.Utility
                 }
                 catch (Exception)
                 {
+                    Console.WriteLine("Thread.Sleep({0});", DefaultRetryInterval);
                     Thread.Sleep(DefaultRetryInterval);
                 }
             }
@@ -79,6 +80,7 @@ namespace White.Core.Utility
                 }
                 catch (Exception)
                 {
+                    Console.WriteLine("Thread.Sleep({0});", retryInterval ?? DefaultRetryInterval);
                     Thread.Sleep(retryInterval ?? DefaultRetryInterval);
                     continue;
                 }
@@ -97,6 +99,7 @@ namespace White.Core.Utility
                     return element;
                 }
 
+                Console.WriteLine("Thread.Sleep({0});", retryInterval ?? DefaultRetryInterval);
                 Thread.Sleep(retryInterval ?? DefaultRetryInterval);
             }
 
